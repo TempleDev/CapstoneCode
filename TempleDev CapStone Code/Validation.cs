@@ -11,7 +11,7 @@
 //           |___________|   
 //This code was collected and complied for the use oF the Temple University 
 //Capstone 2 teams and the CE Systems Development team.
-//    Authors: Kyler Lover, Robert Zahorchak
+//    Authors: Kyler Love, Robert Zahorchak
 //    Project Title: Validation class
 //    Description: This class can be used to validate the contents of textboxes.
 //                 These methods will return boolean values based on the string returned to them
