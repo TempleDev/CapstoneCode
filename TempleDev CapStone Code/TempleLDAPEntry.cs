@@ -10,7 +10,7 @@
 //           |___________|   
 //This code was collected and complied for the use oF the Temple University 
 //Capstone 2 teams and the CE Systems Development team.
-//    Authors: Kyler Lover, Robert Zahorchak
+//    Authors: Kyler Love, Robert Zahorchak
 //    Project Title: TempleLDAPEntry
 //    Description: This is a LDAP object class to use with the LDAP login entries
 //                    
