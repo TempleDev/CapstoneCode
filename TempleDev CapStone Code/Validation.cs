@@ -128,65 +128,69 @@ namespace TempleDev_CapStone_Code
                 return false;
         }
 
-        //This can inly be used with access to Temple univesity LDAP Webservice
-        //it will check for an email against all faculty email, and alias emails
-        public bool ValidateTempleFacultyEmail(string emailAlias)
-        {
-            TempleLDAPEntry result = WebService.getLDAPEntryByEmailAlias(emailAlias);
+        ////This can inly be used with access to Temple univesity LDAP Webservice
+        ////it will check for an email against all faculty email, and alias emails
+        //public bool ValidateTempleFacultyEmail(string emailAlias)
+        //{
+        //    TempleLDAPEntry result = WebService.getLDAPEntryByEmailAlias(emailAlias);
 
-            if (result == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-
-        // Validates a TUID and returns whether or not they are a full time faculty
-
-        // Note: This is not working yet
-        public bool ValidateFullTimeFaculty(string TUID)
-        {
-            TempleLDAPEntry faculty = WebService.getLDAPEntryByTUID(TUID);
-
-            if (faculty != null)
-            {
-                string[] title = faculty.title.Split();
-                foreach (string s in title)
-                {
-                    if (s.ToLower().Equals("adjunct"))
-                    {
-                        return false;
-                    }
-                }
-
-                string[] affiliations = faculty.eduPersonAffiliation.Split(',');
-                foreach (string s in affiliations)
-                {
-                    if (s.ToLower().Equals("faculty"))
-                    {
-                        return false;
-                    }
-                }
-
-                // If person is not primarily an employee
-                if (!faculty.eduPersonPrimaryAffiliation.ToLower().Equals("employee"))
-                {
-                    return false;
-                }
+        //    if (result == null)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+        //}
 
 
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        //// Validates a TUID and returns whether or not they are a full time faculty
 
-        }
+        ///// <summary>
+        ///// Validates the full time faculty.
+        ///// </summary>
+        ///// <param name="TUID">The tuid.</param>
+        ///// <returns></returns>
+        //public bool ValidateFullTimeFaculty(string TUID)
+        //{
+        //    TempleLDAPEntry faculty = WebService.getLDAPEntryByTUID(TUID);
+
+        //    if (faculty != null)
+        //    {
+        //        string[] title = faculty.title.Split();
+        //        foreach (string s in title)
+        //        {
+        //            if (s.ToLower().Equals("adjunct"))
+        //            {
+        //                return false;
+        //            }
+        //        }
+
+        //        string[] affiliations = faculty.eduPersonAffiliation.Split(',');
+        //        foreach (string s in affiliations)
+        //        {
+        //            if (s.ToLower().Equals("faculty"))
+        //            {
+        //                return false;
+        //            }
+        //        }
+
+        //        // If person is not primarily an employee
+        //        if (!faculty.eduPersonPrimaryAffiliation.ToLower().Equals("employee"))
+        //        {
+        //            return false;
+        //        }
+
+
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+
+        //}
 
     }
 }
